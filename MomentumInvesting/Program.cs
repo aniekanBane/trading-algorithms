@@ -9,8 +9,8 @@ using MomentumInvesting;
 using Newtonsoft.Json;
 
 // Load token
-Utils.Secret();
-var key = Environment.GetEnvironmentVariable("IEX_KEY");
+var key = Utils.Secret();
+//var key = Environment.GetEnvironmentVariable("IEX_CLOUD_TOKEN");
 
 // Extract tickers form records.
 var tickers = from s in await Utils.GetListAsync()
