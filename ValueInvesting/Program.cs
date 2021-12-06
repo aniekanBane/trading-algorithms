@@ -82,12 +82,6 @@ foreach (var stock in stocks)
 }
 
 var pCount = stocks.Count;
-var avgPE = stocks.Select(x => x.PERatio).Average();
-var avgPB = stocks.Select(x => x.PBRatio).Average();
-var avgPS = stocks.Select(x => x.PSRatio).Average();
-var avgEVEB = stocks.Select(x => x.EVtoEBITDA).Average();
-var avgEVGP = stocks.Select(x => x.EVtoGP).Average();
-var avgEVR = stocks.Select(x => x.EVtoRevenue).Average();
 foreach (var stock in stocks)
 {
     stock.PEPercentile = 100 * ((double)stocks.Count(x => x.PERatio < stock.PERatio) / pCount);
