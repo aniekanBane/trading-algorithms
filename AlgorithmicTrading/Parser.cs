@@ -64,7 +64,8 @@ namespace AlgorithmicTrading
 
         public static string? Secret()
         {
-            using var file = File.OpenRead("../../../../tk.env");
+            int len = AppContext.BaseDirectory.IndexOf("trading-algorithms");
+            using var file = File.OpenRead(Path.Combine(AppContext.BaseDirectory[..(len + 19)], "tk.env"));
             Env.Load(file);
             return Environment.GetEnvironmentVariable("IEX_CLOUD_TOKEN");
         }
