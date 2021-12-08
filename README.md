@@ -3,7 +3,7 @@ Using computers to make investment decisions.
 ## Getting Started
 Go to the iex website and obtain your token [Link](https://iexcloud.io/)
 ### Run the project
-`NOTE: This project was built and complied using .NET 6`
+`NOTE: This project was built and compiled using .NET 6`
 
 open up your terminal or coommand propmt and run the following commands
 ```
