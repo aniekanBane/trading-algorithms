@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+if [[ -f "tk.env" ]]
+then
+    echo "keys file found."
+    echo "Select strategy"
+    select strategy in "momentum" "value" "equalWeight" "quit"
+    do
+        case $strategy in 
+            equalWeight) dotnet run --project EqualWeightIndexFund/EqualWeightIndexFund.csproj;;
+            momentum) dotnet run --project MomentumInvesting/MomentumInvesting.csproj;;
+            value) dotnet run --project ValueInvesting/ValueInvesting.csproj;;
+            quit) break;;
+            *) echo "Not an option.";;
+        esac
+    done
+else
+    echo "No keys file detected."
+    echo "Create tk.env and put token"
+fi
